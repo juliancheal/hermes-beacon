@@ -2,6 +2,10 @@
 
 TODO: Write a gem description
 
+### Why Hermes?
+
+Hermes is the Greek god of of transitions and boundaries. http://en.wikipedia.org/wiki/Hermes
+
 ## Installation
 
 Add this line to your application's Gemfile:
