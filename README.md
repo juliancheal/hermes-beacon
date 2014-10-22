@@ -10,7 +10,7 @@ Hermes is the Greek god of of transitions and boundaries. http://en.wikipedia.or
 
 Add this line to your application's Gemfile:
 
-    gem 'hermes-beacon'
+    gem 'hermes_beacon'
 
 And then execute:
 
@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install hermes-beacon
+    $ gem install hermes_beacon
 
 ## Usage
 
