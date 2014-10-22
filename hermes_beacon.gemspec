@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'hermes_beacon/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "hermes-beacon"
+  spec.name          = "hermes_beacon"
   spec.version       = Hermes::Beacon::VERSION
   spec.authors       = ["Julian Cheal"]
   spec.email         = ["julian.cheal@gmail.com"]
