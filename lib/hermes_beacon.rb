@@ -6,7 +6,7 @@ module Hermes
     extend FFI::Library
     
     ffi_lib 'objc', '/System/Library/Frameworks/Foundation.framework/Foundation', '/System/Library/Frameworks/IOBluetooth.framework/IOBluetooth',
-    'bin/hermes-beacon'
+    "#{File.dirname(__FILE__)}/../bin/hermes-beacon"
     
     def self.scan(interval=1.1)
       scan = {}
