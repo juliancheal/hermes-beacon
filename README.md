@@ -1,4 +1,4 @@
-# Hermes::Beacon
+# HermesBeacon
 
 TODO: Write a gem description
 
