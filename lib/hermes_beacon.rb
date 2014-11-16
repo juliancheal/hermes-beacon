@@ -1,4 +1,5 @@
 require "hermes_beacon/version"
+require "scan_item"
 require 'ffi'
 
 module Hermes
@@ -11,7 +12,8 @@ module Hermes
     def self.scan(interval=1.1)
       scan = {}
       callback = Proc.new do |uuid, major, minor, power, rssi|
-        scan = {uuid: uuid, major: major, minor: minor, power: power, rssi: rssi}
+        # scan = {uuid: uuid, major: major, minor: minor, power: power, rssi: rssi}
+        scan = ScanItem.new(uuid, major, minor, power, rssi)
         return scan
       end
       Beacon.startWithTimeInterval(interval,callback)
