@@ -20,7 +20,7 @@ module Hermes
         if (ratio < 1.0)
           return ratio**10
         else
-          accuracy = (0.89976)* ratio**7.7095 + 0.111
+          accuracy = (0.89976)* (ratio**7.7095) + 0.111
           return accuracy
         end
       end
