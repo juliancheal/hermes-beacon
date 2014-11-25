@@ -12,7 +12,17 @@ module Hermes
       end
       
       def calculate_distance_from_beacon
-        @rssi.to_f / @power.to_f # and some more maths
+        # Maths from bit.ly/11Sy7j4
+        if (@rssi == 0)
+          return -1.0 # if we cannot determine accuracy, return -1.
+        end
+        ratio = @rssi.to_f*1.0/@power.to_f
+        if (ratio < 1.0)
+          return ratio**10
+        else
+          accuracy = (0.89976)* ratio**7.7095 + 0.111
+          return accuracy
+        end
       end
       
       def manufacturer
