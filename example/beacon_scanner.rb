@@ -11,4 +11,5 @@ while !exit_requested
   puts "Power: #{beacon.power}"
   puts "RSSI: #{beacon.rssi}"
   puts "Distance: #{beacon.calculate_distance_from_beacon}"
+  puts "Range: #{beacon.range}"
 end

@@ -11,6 +11,22 @@ module Hermes
         @rssi  = rssi
       end
       
+      def range
+        ranger = calculate_distance_from_beacon
+        value = ""
+        case
+          when ranger < 1.0
+            value = "Immediate"
+          when ranger < 10.0 && ranger > 1.0
+            value = "Near"
+          when ranger > 10.0
+            value = "Far"
+          else
+           value = "¯\\_(ツ)_/¯"
+        end
+        value
+      end
+      
       def calculate_distance_from_beacon
         # Maths from bit.ly/11Sy7j4
         if (@rssi == 0)
