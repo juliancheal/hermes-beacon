@@ -8,13 +8,20 @@ module Hermes
       include Celluloid, Celluloid::Notifications
 
       def initialize
-        subscribe("scan", :on_completion)
-        subscribe("exited", :on_completion)
-        subscribe("entered", :on_completion)
+      end
+      
+      execute_block_on_receiver :subscriber
+      
+      def subscriber(value, &block)
+        @subscribe_callback = block
+        subscribe(value, :on_completion)
+        # subscribe("scan", :on_completion)
+        # subscribe("exited", :on_completion)
+        # subscribe("entered", :on_completion)
       end
 
       def on_completion(*args)
-        puts args.inspect
+        @subscribe_callback.call(args)
       end
     end
   end

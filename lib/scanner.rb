@@ -41,7 +41,6 @@ module Hermes
             #Remove scans older than quite time
             diff = Time.now.to_f - scan_item.last_seen.to_f
             if (diff > quiet_time)
-              puts "#{scan_item.uuid} Diff #{diff}"
               #[self printExit:scanItem]
               # TODO item.status = exited
               exit_region(scan_item)
