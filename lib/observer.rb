@@ -12,17 +12,15 @@ module Hermes
       
       execute_block_on_receiver :subscriber
       
-      def subscriber(value, &block)
+      def subscriber(topic, &block)
         @subscribe_callback = block
-        subscribe(value, :on_completion)
-        # subscribe("scan", :on_completion)
-        # subscribe("exited", :on_completion)
-        # subscribe("entered", :on_completion)
+        subscribe(topic, :on_message)
       end
-
-      def on_completion(*args)
+      
+      def on_message(*args)
         @subscribe_callback.call(args)
       end
+      
     end
   end
 end
