@@ -44,7 +44,7 @@ module Hermes
               puts "#{scan_item.uuid} Diff #{diff}"
               #[self printExit:scanItem]
               # TODO item.status = exited
-              puts "Deleting key #{key}..."
+              exit_region(scan_item)
               scans.delete(key)
             end
           end
@@ -57,10 +57,9 @@ module Hermes
       #     self.externalCallback(scanItem)
       #   end
         # binding.pry
-        # scans.each do |key,scan|
-        #   publish("scan",scan)
-        # end
-        publish("scan", scans)
+        scans.each do |key,scan|
+          publish("scan", scan)
+        end
       end
       
       def scan
@@ -90,6 +89,7 @@ module Hermes
             scans[scan_item.uuid] = si
           else
             scans[scan_item.uuid] = scan_item
+            enter_region(scan_item)
             #[self printEnter:scanItem]
             # TODO item.status = entered
           end

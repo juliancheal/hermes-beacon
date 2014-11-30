@@ -9,6 +9,8 @@ module Hermes
 
       def initialize
         subscribe("scan", :on_completion)
+        subscribe("exited", :on_completion)
+        subscribe("entered", :on_completion)
       end
 
       def on_completion(*args)
