@@ -1,5 +1,7 @@
 require "hermes_beacon/version"
+require "scanner"
 require "scan_item"
+require "observer"
 require 'ffi'
 
 module Hermes

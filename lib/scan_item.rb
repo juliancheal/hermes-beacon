@@ -1,16 +1,19 @@
 $:.unshift File.join(File.dirname(__FILE__))
+
 module Hermes
   module Beacon
     class ScanItem
       
-      attr_reader :uuid, :major, :minor, :power, :rssi
+      attr_reader :uuid, :major, :minor, :power
+      attr_accessor :last_seen, :rssi
       
-      def initialize(uuid="", major="", minor="", power="", rssi="")
+      def initialize(uuid="", major="", minor="", power="", rssi="",last_seen=nil)
         @uuid  = uuid
         @major = major
         @minor = minor
         @power = power
         @rssi  = rssi
+        @last_seen = last_seen
       end
       
       def range
