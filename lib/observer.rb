@@ -6,9 +6,6 @@ module Hermes
   module Beacon
     class Observer
       include Celluloid, Celluloid::Notifications
-
-      def initialize
-      end
       
       execute_block_on_receiver :subscriber
       

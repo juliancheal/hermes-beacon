@@ -13,7 +13,7 @@ module Hermes
         @quiet_time = 5.0
         @scans = Hash.new
       end
-  
+      
       def scan_with_time_interval(interval)
         @interval = interval
         start_timer(interval)
@@ -38,11 +38,9 @@ module Hermes
           # Reset RSSI to 0
           scan_item.rssi = 0
           unless scan_item.last_seen.nil?
-            #Remove scans older than quite time
+            # Remove scans older than quite time
             diff = Time.now.to_f - scan_item.last_seen.to_f
             if (diff > quiet_time)
-              #[self printExit:scanItem]
-              # TODO item.status = exited
               exit_region(scan_item)
               scans.delete(key)
             end
@@ -51,29 +49,21 @@ module Hermes
       end
       
       def print
-      #   for(NSString *key in [self.scans allKeys]) {
-      #     ScanItem *scanItem = [self.scans objectForKey:key]
-      #     self.externalCallback(scanItem)
-      #   end
-        # binding.pry
         scans.each do |key,scan|
           publish("scan", scan)
         end
       end
       
       def scan
-        # @scans << Hermes::Beacon.scan
         central_manager
       end
       
       def enter_region(scan_item)
         publish("entered", scan_item)
-        # Puts(@"{entered: %@}", scanItem.jsonString)
       end
         
       def exit_region(scan_item)
         publish("exited", scan_item)
-       # Puts(@"{exited: %@}", scanItem.jsonString)
       end
       
       def central_manager
@@ -89,14 +79,8 @@ module Hermes
           else
             scans[scan_item.uuid] = scan_item
             enter_region(scan_item)
-            #[self printEnter:scanItem]
-            # TODO item.status = entered
           end
         end
-      end
-      
-      def terminate
-        $running = false
       end
         
     end
