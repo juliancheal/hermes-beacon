@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Hermes::Beacon::VERSION
   spec.authors       = ["Julian Cheal"]
   spec.email         = ["julian.cheal@gmail.com"]
-  spec.summary       = "Herms-beacon scans for any available altbeacons/ibeacons"
+  spec.summary       = "Herms-beacon scans for any available altbeacon/ibeacon"
   spec.description   = ""
   spec.homepage      = "http://github.com/juliancheal/hermes-beacon"
   spec.license       = "MIT"
