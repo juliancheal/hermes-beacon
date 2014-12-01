@@ -8,7 +8,7 @@ module Hermes
     ffi_lib 'objc', '/System/Library/Frameworks/Foundation.framework/Foundation', '/System/Library/Frameworks/IOBluetooth.framework/IOBluetooth',
     "#{File.dirname(__FILE__)}/../bin/hermes-beacon"
     
-    def self.scan(interval=1.1)
+    def self.scan(interval=0.1)
       scan = {}
       callback = Proc.new do |uuid, major, minor, power, rssi|
         scan = ScanItem.new(uuid, major, minor, power, rssi)
