@@ -6,11 +6,6 @@ describe Hermes::Beacon do
     it 'should return the correct gem version number' do
       Hermes::Beacon::VERSION.must_equal "0.0.2"
     end
-    
-    it 'should return the correct binary version number' do
-      Hermes::Beacon.version.must_equal 0
-    end
-  end
   
   describe 'Distance' do
     it "should return a distance of 1 when rssi & power are equal" do

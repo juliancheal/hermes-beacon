@@ -17,8 +17,6 @@ module Hermes
       Beacon.startWithTimeInterval(interval,callback)
     end
     
-    attach_function :print_version, [], :void
-    attach_function :version, [], :int
     callback :completion_function, [:string, :int, :int, :int, :int], :int
     
     attach_function :startWithTimeInterval, [:double, :completion_function], :void
