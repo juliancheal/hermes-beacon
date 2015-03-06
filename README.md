@@ -26,11 +26,11 @@ TODO: Write usage instructions here
 
 ## Company Identifiers
 
-Decimal	Hexadecimal	Company
-
-76	 0x004C	 Apple, Inc.
-280	​0x0118	​Radius Networks, Inc.
-349	​0x015D	 Estimote, Inc.
+Decimal | Hexadecimal | Company
+--------|-------------|--------
+     76 |      0x004C | Apple, Inc.
+    280 |      0x0118 | Radius Networks, Inc.
+    349 |      0x015D | Estimote, Inc.
 
 
 ## Contributing
