@@ -5,7 +5,7 @@ require "scanner"
 
 module Hermes
   module Beacon
-    class MyGroup < Celluloid::SupervisionGroup
+    class Superviser < Celluloid::SupervisionGroup
       supervise Hermes::Beacon::Scanner, as: :scanner
     end
   end

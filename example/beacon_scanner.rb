@@ -11,4 +11,4 @@ end
 scanner.subscribe("exited") do |beacon|
   puts "I exited'd a beacon, and it's uuid is #{beacon[1].uuid}"
 end
-Hermes::Beacon::MyGroup.run 
+Hermes::Beacon::Superviser.run

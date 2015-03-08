@@ -1,6 +1,6 @@
 require "hermes_beacon/version"
 require "observer"
-require "my_group"
+require "superviser"
 require "scan_item"
 require "scanner"
 require 'rbconfig'
